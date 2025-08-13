@@ -53,8 +53,8 @@ This website showcases my skills, projects, and professional journey as a **Soft
    ```bash
       npm run dev
    ```
-    <br>
-    Your app will be running at http://localhost:3000
+    
+Now the website will be running at http://localhost:3000
 
 ## 📬 Contact
 Portfolio: [Your Website URL]
