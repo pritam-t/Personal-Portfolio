@@ -30,7 +30,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Email</p>
-                  <p className="text-muted-foreground">your.email@example.com</p>
+                  <p className="text-muted-foreground">pritamthopate27@gmail.com</p>
                 </div>
               </div>
 
@@ -40,7 +40,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Phone</p>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">+91 9930806340</p>
                 </div>
               </div>
 
@@ -50,7 +50,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Location</p>
-                  <p className="text-muted-foreground">Your City, Country</p>
+                  <p className="text-muted-foreground">Navi Mumbai, India</p>
                 </div>
               </div>
             </div>

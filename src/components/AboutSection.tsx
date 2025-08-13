@@ -8,7 +8,8 @@ const AboutSection = () => {
           About Me
         </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          I'm a passionate software engineer with a love for creating elegant solutions to complex problems.
+          I'm a passionate Computer Science Engineering student and software developer specializing in mobile app development, 
+          AI integration, and robotics automation.
         </p>
       </div>
 
@@ -18,13 +19,15 @@ const AboutSection = () => {
             My Journey
           </h3>
           <p className="text-muted-foreground leading-relaxed">
-            With several years of experience in software development, I've had the opportunity to work 
-            on diverse projects ranging from web applications to mobile apps. I believe in writing 
-            clean, maintainable code and creating user experiences that make a difference.
+            Currently pursuing B.E. in Computer Science Engineering at Terna Engineering College, Navi Mumbai. 
+            I have hands-on experience in Flutter development, robotics programming, and AI integration through 
+            internships at The Innovation Story and NE Worldwide. As a Google Student Brand Ambassador, I represent 
+            Google's developer ecosystem on campus.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            When I'm not coding, you can find me exploring new technologies, contributing to open-source 
-            projects, or sharing knowledge with the developer community.
+            My achievements include winning the Gold Medal for Best Robot Design at FIRST Global Challenge 2022 
+            representing India, and multiple wins in national robotics competitions. I'm passionate about mentoring 
+            teams and contributing to the tech community through innovative solutions.
           </p>
         </div>
 
@@ -33,19 +36,19 @@ const AboutSection = () => {
           <ul className="space-y-4 text-muted-foreground">
             <li className="flex items-center gap-3">
               <div className="w-2 h-2 bg-primary rounded-full animate-glow-pulse"></div>
-              Years of Experience: [Add your experience]
+              Current Year: 3rd Year B.E. CSE
             </li>
             <li className="flex items-center gap-3">
               <div className="w-2 h-2 bg-accent rounded-full animate-glow-pulse"></div>
-              Location: [Add your location]
+              Location: Navi Mumbai, India
             </li>
             <li className="flex items-center gap-3">
               <div className="w-2 h-2 bg-primary rounded-full animate-glow-pulse"></div>
-              Education: [Add your education]
+              Education: Terna Engineering College
             </li>
             <li className="flex items-center gap-3">
               <div className="w-2 h-2 bg-accent rounded-full animate-glow-pulse"></div>
-              Interests: [Add your interests]
+              Specialties: Mobile Dev, AI, Robotics
             </li>
           </ul>
         </Card>
