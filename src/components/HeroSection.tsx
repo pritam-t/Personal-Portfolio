@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${heroImage})`,
@@ -17,53 +17,97 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <div className="animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-primary bg-clip-text text-transparent tracking-tight">
+        <div className="animate-fade-in-up space-y-6">
+          {/* Name */}
+          <h1
+            className="text-6xl md:text-7 xl font-extrabold mb-2 
+                       bg-gradient-to-r from-primary via-accent to-primary
+                       bg-clip-text text-transparent tracking-wide 
+                       font-[Poppins]"
+          >
             Pritam Thopate
           </h1>
-          <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8 font-light">
+
+          {/* Tagline */}
+          <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium tracking-tight">
             Software Developer • Native App Developer • Google Student Brand Ambassador
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            3rd Year CS Engineering student passionate about mobile development, AI integration, and robotics. 
+
+          {/* Short Bio */}
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            3rd Year CS Engineering student passionate about mobile development, AI integration, and robotics.
             Gold medalist at FIRST Global Challenge representing India.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button 
-              variant="hero" 
-              size="lg" 
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+            <Button
+              variant="hero"
+              size="lg"
               className="text-lg px-8 py-6"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() =>
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               View My Work
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
+            <Button
+              variant="outline"
+              size="lg"
               className="text-lg px-8 py-6"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               Get In Touch
             </Button>
           </div>
 
-          <div className="flex justify-center gap-6">
-            <Button variant="ghost" size="icon" className="hover:scale-110 transition-spring" asChild>
-              <a href="https://github.com/pritam-t" target="_blank" rel="noopener noreferrer">
+          {/* Social Icons */}
+          <div className="flex justify-center gap-6 pt-4">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hover:scale-110 transition-spring"
+              asChild
+            >
+              <a
+                href="https://github.com/pritam-t"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github className="w-6 h-6" />
               </a>
             </Button>
-            <Button variant="ghost" size="icon" className="hover:scale-110 transition-spring" asChild>
-              <a href="https://www.linkedin.com/in/pritam-thopate/" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hover:scale-110 transition-spring"
+              asChild
+            >
+              <a
+                href="https://www.linkedin.com/in/pritam-thopate/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin className="w-6 h-6" />
               </a>
             </Button>
-            <Button variant="ghost" size="icon" className="hover:scale-110 transition-spring" asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hover:scale-110 transition-spring"
+              asChild
+            >
               <a href="mailto:pritamthopate27@gmail.com">
                 <Mail className="w-6 h-6" />
               </a>
             </Button>
+
           </div>
         </div>
       </div>

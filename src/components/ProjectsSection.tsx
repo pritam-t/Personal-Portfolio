@@ -7,30 +7,30 @@ const ProjectsSection = () => {
     {
       title: "MediScan+",
       description: "Mobile healthcare assistant app with AI-powered symptom checking, medicine scanning, and health profiling. Integrated Google Maps for medical facilities and SQLite for offline persistence.",
-      technologies: ["Flutter", "SQLite", "REST APIs", "AI Integration"],
+      technologies: ["Flutter", "SQLite", "REST APIs", "AI Integration","Android SDK"],
       demoUrl: null,
-      codeUrl: null
+      codeUrl: "https://github.com/pritam-t/MediScan.git"
     },
     {
       title: "TrackStack", 
       description: "Cross-platform habit and task tracking app with dynamic progress visualization and real-time statistics. Implemented swipe-based UI for enhanced user engagement.",
-      technologies: ["Flutter", "Dart", "SharedPreferences"],
+      technologies: ["Flutter", "Dart", "SharedPreferences","Android SDK"],
       demoUrl: null,
       codeUrl: "https://github.com/pritam-t/TrackStack"
     },
     {
       title: "OVERLAYS_PS",
       description: "Snapchat Lens for virtual clothing try-on using real-time garment overlay and body tracking. Featured on Snapchat, addressing online shopping return rates.",
-      technologies: ["Lens Studio", "JavaScript", "Computer Vision"],
-      demoUrl: null,
+      technologies: ["Lens Studio", "JavaScript", "Computer Vision","Snap Chat"],
+      demoUrl: "https://www.snapchat.com/lens/ff4d3b97297a4667b634aaa5314a5b9e?share_id=8jW2_BNf_I0&locale=en-IN",
       codeUrl: null
     },
     {
       title: "ASTRA",
       description: "Smart warehouse automation system with autonomous robot for package sorting. Built Flutter companion app with QR code scanning and Bluetooth communication.",
-      technologies: ["Flutter", "Java", "Arduino", "Bluetooth"],
-      demoUrl: null,
-      codeUrl: null
+      technologies: ["Flutter", "Java", "Arduino", "Bluetooth","Python","OpenCV","SolidWorks"],
+      demoUrl: "https://www.linkedin.com/posts/pritam-thopate_flutter-dart-arduino-activity-7327950791837667329-4Hr7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAETeaHwBZj82urcTDJWxZHTLwzlJlio70CE",
+      codeUrl: "https://github.com/pritam-t/ASTRA-The-Smart-Warehouse-Automation.git"
     },
     {
       title: "RoboHub",
@@ -42,7 +42,7 @@ const ProjectsSection = () => {
     {
       title: "Multi Calculator",
       description: "Versatile Java-based calculator with multiple operational modes including scientific functions and unit conversions. Features intuitive GUI with optimized algorithms.",
-      technologies: ["Java", "Swing", "GUI"],
+      technologies: ["Flutter", "Dart3", "Hive","Encrypt","Android SDK"],
       demoUrl: null,
       codeUrl: "https://github.com/pritam-t/Multi_Calculator"
     }
