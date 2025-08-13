@@ -42,7 +42,7 @@ This website showcases my skills, projects, and professional journey as a **Soft
    ```bash
       git clone https://github.com/your-username/portfolio.git
       cd portfolio
-   ```bash
+   ```
 
 ### 2️⃣ Install Dependencies
    ```bash 
@@ -59,10 +59,10 @@ This website showcases my skills, projects, and professional journey as a **Soft
 ## 📬 Contact
 Portfolio: [Your Website URL]
 
-## GitHub: https://github.com/pritam-t
+### GitHub: https://github.com/pritam-t
 
-## LinkedIn: https://www.linkedin.com/in/pritam-thopate/
+### LinkedIn: https://www.linkedin.com/in/pritam-thopate/
 
-## Email: pritamthopate27@gmail.com
+### Email: pritamthopate27@gmail.com
 
 # 💡 This portfolio is open-source! Feel free to fork and use it for your own projects.
