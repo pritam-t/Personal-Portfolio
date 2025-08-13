@@ -1,4 +1,4 @@
-# 🚀 Personal Portfolio Website
+# 🚀_ Personal Portfolio Website _ 
 
 A modern and responsive personal portfolio built with **Next.js**, **Tailwind CSS**, and **shadcn/ui**.  
 This website showcases my skills, projects, and professional journey as a **Software Developer**, **Native App Developer**, and **Google Student Brand Ambassador**.
@@ -27,31 +27,34 @@ This website showcases my skills, projects, and professional journey as a **Soft
 
 ## 📂 Project Structure
 
-├── components/ # Reusable UI components
-├── assets/ # Images & static files
-├── pages/ # Page components (Next.js routing)
-├── public/ # Public assets
-├── styles/ # Global styles
-└── README.md
+├── components/ # Reusable UI components<br>
+├── assets/ # Images & static files<br>
+├── pages/ # Page components (Next.js routing)<br>
+├── public/ # Public assets<br>
+├── styles/ # Global styles<br>
+└── README.md<br>
 
 ---
 
 ## 🚀 Getting Started
 
 ### 1️⃣ Clone the Repository
-
-git clone https://github.com/your-username/portfolio.git
-cd portfolio
-
+   ```bash
+      git clone https://github.com/your-username/portfolio.git
+      cd portfolio
+   ```bash
 
 ### 2️⃣ Install Dependencies
-npm install
-
+   ```bash 
+      npm install
+   ```
 
 ### 3️⃣ Run the Development Server
-
-npm run dev
-Your app will be running at http://localhost:3000
+   ```bash
+      npm run dev
+   ```
+    <br>
+    Your app will be running at http://localhost:3000
 
 ## 📬 Contact
 Portfolio: [Your Website URL]
