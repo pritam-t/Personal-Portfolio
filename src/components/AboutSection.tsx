@@ -5,53 +5,69 @@ const AboutSection = () => {
     <section className="py-20 px-6 max-w-6xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-          About Me
+          My Journey
         </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          I'm a passionate Computer Science Engineering student and software developer specializing in mobile app development, 
-          AI integration, and robotics automation.
+          From a passionate CS student to representing India on the global stage in robotics competitions.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
-          <h3 className="text-2xl font-semibold text-foreground">
-            My Journey
-          </h3>
-          <p className="text-muted-foreground leading-relaxed">
-            Currently pursuing B.E. in Computer Science Engineering at Terna Engineering College, Navi Mumbai. 
-            I have hands-on experience in Flutter development, robotics programming, and AI integration through 
-            internships at The Innovation Story and NE Worldwide. As a Google Student Brand Ambassador, I represent 
-            Google's developer ecosystem on campus.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            My achievements include winning the Gold Medal for Best Robot Design at FIRST Global Challenge 2022 
-            representing India, and multiple wins in national robotics competitions. I'm passionate about mentoring 
-            teams and contributing to the tech community through innovative solutions.
-          </p>
-        </div>
-
+      <div className="space-y-12">
+        {/* Education */}
         <Card className="p-8 bg-gradient-card border-primary/20">
-          <h3 className="text-xl font-semibold mb-6 text-foreground">Quick Facts</h3>
-          <ul className="space-y-4 text-muted-foreground">
-            <li className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full animate-glow-pulse"></div>
-              Current Year: 3rd Year B.E. CSE
-            </li>
-            <li className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-accent rounded-full animate-glow-pulse"></div>
-              Location: Navi Mumbai, India
-            </li>
-            <li className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full animate-glow-pulse"></div>
-              Education: Terna Engineering College
-            </li>
-            <li className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-accent rounded-full animate-glow-pulse"></div>
-              Specialties: Mobile Dev, AI, Robotics
-            </li>
-          </ul>
+          <h3 className="text-2xl font-semibold mb-4 text-foreground">Education</h3>
+          <div className="space-y-2">
+            <p className="text-lg font-medium text-foreground">B.E. in Computer Science Engineering</p>
+            <p className="text-muted-foreground">Terna Engineering College, Navi Mumbai</p>
+            <p className="text-sm text-muted-foreground">Aug 2023 – March 2027 (3rd Year)</p>
+          </div>
         </Card>
+
+        {/* Experience */}
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-foreground">Professional Experience</h3>
+          <div className="grid gap-6">
+            <Card className="p-6 bg-gradient-card border-primary/20">
+              <div className="space-y-3">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h4 className="text-lg font-semibold text-foreground">Software Development Intern – Robotics & Programming</h4>
+                  <span className="text-sm text-muted-foreground">June 2024 – May 2025</span>
+                </div>
+                <p className="text-primary font-medium">The Innovation Story</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Developed software systems for autonomous robots using Java, image processing, and sensor integration. 
+                  Contributed to control algorithms, R&D, and software optimization.
+                </p>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-gradient-card border-primary/20">
+              <div className="space-y-3">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h4 className="text-lg font-semibold text-foreground">Google Student Brand Ambassador</h4>
+                  <span className="text-sm text-muted-foreground">Feb 2025 – Present</span>
+                </div>
+                <p className="text-primary font-medium">Google</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Representing Google on campus, leading student engagement, organizing events, and promoting Google's developer ecosystem.
+                </p>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-gradient-card border-primary/20">
+              <div className="space-y-3">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h4 className="text-lg font-semibold text-foreground">DBMS & Marketing Intern</h4>
+                  <span className="text-sm text-muted-foreground">May 2023 – Dec 2023</span>
+                </div>
+                <p className="text-primary font-medium">NE Worldwide</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Designed and managed database systems for efficient data handling. Assisted in marketing initiatives and data-driven decision-making.
+                </p>
+              </div>
+            </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

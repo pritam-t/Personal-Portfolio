@@ -7,92 +7,50 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section className="py-20 px-6 bg-secondary/50">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="py-20 px-6">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
             Let's Work Together
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Have a project in mind? I'd love to hear about it. Let's create something amazing together.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Ready to collaborate on your next project? Let's connect and create something amazing together.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold text-foreground">Get In Touch</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Email</p>
-                  <p className="text-muted-foreground">pritamthopate27@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Phone</p>
-                  <p className="text-muted-foreground">+91 9930806340</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Location</p>
-                  <p className="text-muted-foreground">Navi Mumbai, India</p>
-                </div>
-              </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="p-6 bg-gradient-card border-primary/20 hover:shadow-glow-primary transition-smooth text-center">
+            <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+              <Mail className="w-8 h-8 text-primary-foreground" />
             </div>
-          </div>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Email</h3>
+            <a 
+              href="mailto:pritamthopate27@gmail.com" 
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              pritamthopate27@gmail.com
+            </a>
+          </Card>
 
-          {/* Contact Form */}
-          <Card className="p-8 bg-gradient-card border-primary/20">
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="firstName">First Name</Label>
-                  <Input id="firstName" placeholder="John" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input id="lastName" placeholder="Doe" />
-                </div>
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="john@example.com" />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="subject">Subject</Label>
-                <Input id="subject" placeholder="Project Inquiry" />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Tell me about your project..."
-                  className="min-h-32"
-                />
-              </div>
-              
-              <Button variant="hero" size="lg" className="w-full">
-                Send Message
-              </Button>
-            </form>
+          <Card className="p-6 bg-gradient-card border-primary/20 hover:shadow-glow-primary transition-smooth text-center">
+            <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+              <Phone className="w-8 h-8 text-primary-foreground" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Phone</h3>
+            <a 
+              href="tel:+919930806340" 
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              +91 9930806340
+            </a>
+          </Card>
+
+          <Card className="p-6 bg-gradient-card border-primary/20 hover:shadow-glow-primary transition-smooth text-center">
+            <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+              <MapPin className="w-8 h-8 text-primary-foreground" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Location</h3>
+            <p className="text-muted-foreground">Navi Mumbai, India</p>
           </Card>
         </div>
       </div>
