@@ -49,7 +49,7 @@ const AboutSection = () => {
             },
             {
               title: "Google Student Brand Ambassador",
-              period: "Feb 2025 – Present",
+              period: "August 2025 – Present",
               company: "Google",
               description: [
                 "Representing Google on campus, leading student engagement, organizing events, and promoting Google's developer ecosystem."
