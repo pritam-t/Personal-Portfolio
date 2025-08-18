@@ -48,14 +48,6 @@ const AboutSection = () => {
               ]
             },
             {
-              title: "Google Student Brand Ambassador",
-              period: "August 2025 – Present",
-              company: "Google",
-              description: [
-                "Representing Google on campus, leading student engagement, organizing events, and promoting Google's developer ecosystem."
-              ]
-            },
-            {
               title: "DBMS & Marketing Intern",
               period: "May 2023 – Dec 2023",
               company: "NE Worldwide",

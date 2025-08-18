@@ -30,7 +30,7 @@ const HeroSection = () => {
 
           {/* Tagline */}
           <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium tracking-tight">
-            Software Developer • Native App Developer • Google Student Ambassador
+            Software Developer • Native App Developer 
           </h2>
 
           {/* Short Bio */}
