@@ -171,7 +171,7 @@ const HeroSection = () => {
                 {/* Profile Image */}
                 <div className="absolute inset-0 rounded-full overflow-hidden">
                   <img
-                    src="public\images\profile.jpeg"
+                    src="\public\images\profile.jpeg"
                     alt="Pritam Thopate"
                     className="w-full h-full object-cover rounded-full"
                   />
