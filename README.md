@@ -40,7 +40,7 @@ This website showcases my skills, projects, and professional journey as a **Soft
 
 ### 1️⃣ Clone the Repository
    ```bash
-      git clone https://github.com/your-username/portfolio.git
+      git clone https://github.com/pritam-t/Personal-Portfolio.git
       cd portfolio
    ```
 
