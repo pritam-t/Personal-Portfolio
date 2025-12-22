@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Trophy, Medal, Award, Star, Zap, Users } from "lucide-react";
+import { Trophy, Medal, Award, Star, Zap, Users, ChevronRight } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -17,147 +17,396 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// Achievement Card Component
-const AchievementCard = ({ achievement, onClick }) => {
+// Timeline Achievement Card Component
+const TimelineCard = ({ achievement, index, onClick }) => {
+  const IconComponent = achievement.icon;
+  const isEven = index % 2 === 0;
+  
+  return (
+    <div className="relative flex items-center gap-8 group">
+      {/* Timeline line connector */}
+      <div className="absolute left-1/2 top-0 w-0.5 h-full bg-gradient-to-b from-blue-500/50 to-transparent -z-10" />
+      
+      {/* Content wrapper - alternating sides */}
+      <div className={`flex items-center w-full gap-8 ${isEven ? 'flex-row' : 'flex-row-reverse'}`}>
+        {/* Card Container - One unified card */}
+        <div className={`flex-1 ${isEven ? 'pr-8' : 'pl-8'}`}>
+          <div
+            onClick={onClick}
+            className={`flex ${isEven ? 'flex-row' : 'flex-row-reverse'} gap-6 cursor-pointer p-6 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl hover:border-blue-500/60 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 max-w-3xl ${isEven ? 'ml-auto' : 'mr-auto'}`}
+          >
+            {/* Image Side */}
+            {achievement.images?.[0] && (
+              <div className="relative w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden border border-slate-700/50">
+                <img
+                  src={achievement.images[0]}
+                  alt={achievement.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+              </div>
+            )}
+            
+            {/* Icon placeholder if no image */}
+            {!achievement.images?.[0] && (
+              <div className="w-48 h-48 flex-shrink-0 rounded-xl bg-gradient-to-br from-slate-700/50 to-slate-800/50 border border-slate-700/50 flex items-center justify-center">
+                <IconComponent className="w-16 h-16 text-blue-500/30" />
+              </div>
+            )}
+
+            {/* Text Content Side */}
+            <div className="flex-1 flex flex-col justify-center">
+              {/* Title */}
+              <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-blue-300 transition-colors">
+                {achievement.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                {achievement.description}
+              </p>
+
+              {/* Theme tag if exists */}
+              {achievement.theme && (
+                <p className="text-xs text-blue-300/80 italic mb-2 leading-relaxed">
+                  {achievement.theme}
+                </p>
+              )}
+
+              {/* Meta info - Location and Year */}
+              <div className="flex items-center gap-4 text-xs text-gray-500">
+                {achievement.location && (
+                  <span className="flex items-center gap-1">
+                    <span>📍</span>
+                    <span>{achievement.location}</span>
+                  </span>
+                )}
+                <span className="flex items-center gap-1">
+                  <span>📅</span>
+                  <span>{achievement.year}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Center Icon Node */}
+        <div className="relative flex-shrink-0 z-10">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 border-4 border-slate-950 shadow-lg shadow-blue-500/30 flex items-center justify-center group-hover:scale-110 group-hover:shadow-blue-500/50 transition-all duration-300">
+            <IconComponent className="w-7 h-7 text-white" />
+          </div>
+          {/* Pulse effect */}
+          <div className="absolute inset-0 rounded-full bg-blue-500/30 animate-ping opacity-0 group-hover:opacity-100" />
+        </div>
+
+        {/* Spacer for alternating layout */}
+        <div className="flex-1" />
+      </div>
+    </div>
+  );
+};
+
+// Mobile Card Component (stacked view)
+const MobileCard = ({ achievement, onClick }) => {
   const IconComponent = achievement.icon;
   
   return (
-    <div
-      onClick={onClick}
-      className="cursor-pointer p-6 bg-gradient-to-br from-slate-800 to-slate-900 border border-blue-500/20 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105"
-    >
-      {/* Header with Icon and Year */}
-      <div className="flex items-start justify-between gap-4 mb-4">
-        <div className="p-3 bg-blue-600 rounded-lg flex-shrink-0">
-          <IconComponent className="w-6 h-6 text-white" />
-        </div>
-        <span className="text-xs font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full">
-          {achievement.year}
-        </span>
+    <div className="relative pl-12">
+      {/* Vertical line */}
+      <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/50 to-blue-500/20" />
+      
+      {/* Icon node */}
+      <div className="absolute left-0 top-6 w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 border-2 border-slate-950 flex items-center justify-center shadow-lg shadow-blue-500/30">
+        <IconComponent className="w-4 h-4 text-white" />
       </div>
 
-      {/* Title */}
-      <h3 className="text-lg font-bold text-white mb-3 line-clamp-2">
-        {achievement.title}
-      </h3>
+      {/* Content card - Horizontal layout */}
+      <div
+        onClick={onClick}
+        className="mb-8 cursor-pointer flex gap-4 p-5 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-xl hover:border-blue-500/60 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
+      >
+        {/* Image section */}
+        {achievement.images?.[0] && (
+          <div className="relative overflow-hidden w-28 h-28 flex-shrink-0 rounded-lg border border-slate-700/50">
+            <img
+              src={achievement.images[0]}
+              alt={achievement.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
+          </div>
+        )}
 
-      {/* Description */}
-      <p className="text-sm text-gray-300 mb-4 line-clamp-3">
-        {achievement.description}
-      </p>
+        {/* Icon placeholder if no image */}
+        {!achievement.images?.[0] && (
+          <div className="w-28 h-28 flex-shrink-0 rounded-lg bg-gradient-to-br from-slate-700/50 to-slate-800/50 border border-slate-700/50 flex items-center justify-center">
+            <IconComponent className="w-10 h-10 text-blue-500/30" />
+          </div>
+        )}
 
-      {/* Preview Image - Smaller */}
-      {achievement.images?.[0] && (
-        <div className="relative overflow-hidden rounded-lg border border-gray-600/30">
-          <img
-            src={achievement.images[0]}
-            alt={achievement.title}
-            className="w-full h-64 sm:h-72 md:h-80 object-cover hover:scale-110 transition-transform duration-300"
-          />
+        {/* Text content */}
+        <div className="flex-1 flex flex-col justify-center min-w-0">
+          {/* Title */}
+          <h3 className="text-base font-bold text-white mb-2 line-clamp-2">
+            {achievement.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-sm text-gray-400 leading-relaxed mb-3 line-clamp-2">
+            {achievement.description}
+          </p>
+
+          {/* Meta info */}
+          <div className="flex items-center gap-3 text-xs text-gray-500">
+            {achievement.location && (
+              <span className="flex items-center gap-1">
+                <span>📍</span>
+                <span className="truncate">{achievement.location}</span>
+              </span>
+            )}
+            <span className="flex items-center gap-1">
+              <span>📅</span>
+              <span>{achievement.year}</span>
+            </span>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
 
 // Modal Content Component
 const AchievementModal = ({ achievement, onClose }) => {
-  return (
-    <DialogContent className="max-w-2xl sm:max-w-3xl md:max-w-4xl max-h-[90vh] overflow-hidden flex flex-col bg-slate-900 border border-blue-500/30 rounded-2xl">
-      {/* Header - Sticky */}
-      <DialogHeader className="flex-shrink-0 pb-4 border-b border-gray-700">
-        <div className="flex items-start gap-3 mb-2">
-          <div className="p-2 bg-blue-600 rounded-lg flex-shrink-0">
-            {achievement.icon && <achievement.icon className="w-5 h-5 text-white" />}
-          </div>
-          <DialogTitle className="text-xl sm:text-2xl font-bold text-white">
-            {achievement.title}
-          </DialogTitle>
-        </div>
-        <DialogDescription className="text-xs sm:text-sm text-gray-400 mt-2 ml-1">
-          {achievement.location && `Location: ${achievement.location}`}
-          {achievement.location && achievement.year && " • "}
-          Year: {achievement.year}
-        </DialogDescription>
-        {achievement.theme && (
-          <div className="text-xs sm:text-sm text-blue-400 mt-2 font-semibold ml-1">
-            Theme: {achievement.theme}
-          </div>
-        )}
-        {achievement.role && (
-          <div className="text-xs sm:text-sm text-purple-400 mt-2 font-semibold ml-1">
-            Role: {achievement.role}
-          </div>
-        )}
-      </DialogHeader>
+  const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+  
+  // Combine images and video into one media array
+  const mediaItems = [
+    ...(achievement.images || []).map(img => ({ type: 'image', src: img })),
+    ...(achievement.video ? [{ type: 'video', src: achievement.video }] : [])
+  ];
 
-      {/* Scrollable Content */}
-      <div className="flex-1 overflow-y-auto min-h-0 space-y-6 py-6 px-1 sm:px-0">
-        {/* Carousel */}
-        {(achievement.images?.length > 0 || achievement.video) && (
-          <div className="px-4">
-            <Carousel className="w-full">
-              <CarouselContent>
-                {achievement.images?.map((img, i) => (
-                  <CarouselItem key={`img-${i}`} className="flex justify-center">
+  const nextMedia = () => {
+    setCurrentMediaIndex((prev) => (prev + 1) % mediaItems.length);
+  };
+
+  const prevMedia = () => {
+    setCurrentMediaIndex((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
+  };
+
+  return (
+    <DialogContent className="max-w-7xl max-h-[95vh] overflow-hidden bg-slate-950 border border-slate-800 rounded-2xl p-0 [&>button]:hidden">
+      <div className="flex flex-col h-[95vh]">
+        {/* Header */}
+        <div className="flex-shrink-0 flex items-center justify-between px-6 py-4 border-b border-slate-800">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
+              {achievement.icon && <achievement.icon className="w-5 h-5 text-white" />}
+            </div>
+            <div>
+              <h2 className="text-lg font-bold text-white">
+                {achievement.title}
+              </h2>
+              <div className="flex items-center gap-3 text-xs text-gray-500">
+                <span>{achievement.location}</span>
+                <span>•</span>
+                <span>{achievement.year}</span>
+              </div>
+            </div>
+          </div>
+          <button
+            onClick={onClose}
+            className="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-800 text-gray-400 hover:text-white transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 flex overflow-hidden">
+          {/* Left - Media Gallery */}
+          <div className="w-full lg:w-3/5 bg-slate-900 flex items-center justify-center relative p-6">
+            {mediaItems.length > 0 ? (
+              <>
+                {/* Media Display */}
+                <div className="relative w-full h-full flex items-center justify-center">
+                  {mediaItems[currentMediaIndex].type === 'image' ? (
                     <img
-                      src={img}
-                      alt={`Slide ${i + 1}`}
-                      className="w-full max-w-md h-auto max-h-72 object-cover rounded-lg border border-gray-600"
+                      src={mediaItems[currentMediaIndex].src}
+                      alt={`Media ${currentMediaIndex + 1}`}
+                      className="max-w-full max-h-full object-contain rounded-lg"
                     />
-                  </CarouselItem>
-                ))}
-                {achievement.video && (
-                  <CarouselItem className="flex justify-center">
+                  ) : (
                     <video
                       controls
-                      className="w-full max-w-md h-auto max-h-72 object-cover rounded-lg border border-gray-600"
-                      src={achievement.video}
+                      className="max-w-full max-h-full object-contain rounded-lg"
+                      src={mediaItems[currentMediaIndex].src}
+                      key={currentMediaIndex}
                     />
-                  </CarouselItem>
-                )}
-              </CarouselContent>
-              {(achievement.images?.length > 1 || achievement.video) && (
-                <>
-                  <CarouselPrevious className="left-0" />
-                  <CarouselNext className="right-0" />
-                </>
-              )}
-            </Carousel>
-          </div>
-        )}
+                  )}
+                </div>
 
-        {/* Description */}
-        <div className="px-4">
-          <p className="text-sm sm:text-base text-gray-300 leading-relaxed whitespace-pre-line">
-            {achievement.description}
-          </p>
+                {/* Navigation Arrows */}
+                {mediaItems.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevMedia}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 backdrop-blur-sm hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={nextMedia}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 backdrop-blur-sm hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </>
+                )}
+
+                {/* Media Counter */}
+                {mediaItems.length > 1 && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/60 backdrop-blur-md rounded-full text-white text-sm font-medium">
+                    {currentMediaIndex + 1} / {mediaItems.length}
+                  </div>
+                )}
+
+                {/* Thumbnail Strip */}
+                {mediaItems.length > 1 && (
+                  <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-2 max-w-md overflow-x-auto px-4 py-2 bg-black/40 backdrop-blur-md rounded-full">
+                    {mediaItems.map((item, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentMediaIndex(idx)}
+                        className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                          idx === currentMediaIndex
+                            ? 'border-blue-500 scale-110'
+                            : 'border-transparent opacity-60 hover:opacity-100'
+                        }`}
+                      >
+                        {item.type === 'image' ? (
+                          <img src={item.src} alt={`Thumb ${idx + 1}`} className="w-full h-full object-cover" />
+                        ) : (
+                          <div className="w-full h-full bg-slate-800 flex items-center justify-center">
+                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="flex items-center justify-center h-full">
+                {achievement.icon && <achievement.icon className="w-32 h-32 text-slate-700" />}
+              </div>
+            )}
+          </div>
+
+          {/* Right - Details */}
+          <div className="hidden lg:block lg:w-2/5 border-l border-slate-800 overflow-y-auto">
+            <div className="p-6 space-y-6">
+              {/* Tags */}
+              {(achievement.role || achievement.theme) && (
+                <div className="flex flex-wrap gap-2">
+                  {achievement.role && (
+                    <span className="px-3 py-1.5 bg-purple-500/10 text-purple-400 text-xs font-medium rounded-full border border-purple-500/20">
+                      {achievement.role}
+                    </span>
+                  )}
+                  {achievement.theme && (
+                    <span className="px-3 py-1.5 bg-blue-500/10 text-blue-400 text-xs font-medium rounded-full border border-blue-500/20">
+                      Theme: {achievement.theme}
+                    </span>
+                  )}
+                </div>
+              )}
+
+              {/* Description */}
+              <div>
+                <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Overview</h3>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  {achievement.description}
+                </p>
+              </div>
+
+              {/* Key Contributions */}
+              {achievement.highlights && achievement.highlights.length > 0 && (
+                <div>
+                  <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Key Contributions</h3>
+                  <div className="space-y-3">
+                    {achievement.highlights.map((highlight, i) => (
+                      <div key={i} className="flex gap-3 group">
+                        <div className="flex-shrink-0 w-5 h-5 mt-0.5 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/30 group-hover:bg-blue-500/30 transition-colors">
+                          <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                        </div>
+                        <p className="text-sm text-gray-400 leading-relaxed">
+                          {highlight}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
 
-        {/* Highlights Section */}
-        {achievement.highlights && achievement.highlights.length > 0 && (
-          <div className="px-4">
-            <h4 className="text-sm font-semibold text-blue-400 mb-3">Key Contributions:</h4>
-            <ul className="space-y-2">
-              {achievement.highlights.map((highlight, i) => (
-                <li key={i} className="text-sm text-gray-300 flex gap-3">
-                  <span className="text-blue-400 font-bold flex-shrink-0">•</span>
-                  <span>{highlight}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
+        {/* Mobile Details (shown below media on mobile) */}
+        <div className="lg:hidden border-t border-slate-800 overflow-y-auto max-h-[40vh]">
+          <div className="p-6 space-y-6">
+            {/* Tags */}
+            {(achievement.role || achievement.theme) && (
+              <div className="flex flex-wrap gap-2">
+                {achievement.role && (
+                  <span className="px-3 py-1.5 bg-purple-500/10 text-purple-400 text-xs font-medium rounded-full border border-purple-500/20">
+                    {achievement.role}
+                  </span>
+                )}
+                {achievement.theme && (
+                  <span className="px-3 py-1.5 bg-blue-500/10 text-blue-400 text-xs font-medium rounded-full border border-blue-500/20">
+                    Theme: {achievement.theme}
+                  </span>
+                )}
+              </div>
+            )}
 
-      {/* Footer - Sticky */}
-      <div className="flex-shrink-0 pt-4 border-t border-gray-700 px-4">
-        <button
-          onClick={onClose}
-          className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
-        >
-          Close
-        </button>
+            {/* Description */}
+            <div>
+              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Overview</h3>
+              <p className="text-sm text-gray-300 leading-relaxed">
+                {achievement.description}
+              </p>
+            </div>
+
+            {/* Key Contributions */}
+            {achievement.highlights && achievement.highlights.length > 0 && (
+              <div>
+                <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Key Contributions</h3>
+                <div className="space-y-3">
+                  {achievement.highlights.map((highlight, i) => (
+                    <div key={i} className="flex gap-3">
+                      <div className="flex-shrink-0 w-5 h-5 mt-0.5 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                      </div>
+                      <p className="text-sm text-gray-400 leading-relaxed">
+                        {highlight}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </DialogContent>
   );
@@ -273,22 +522,40 @@ const AchievementsSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-slate-950">
-      <div className="w-full max-w-6xl mx-auto">
+    <section className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/5 via-transparent to-transparent" />
+      
+      <div className="relative w-full max-w-6xl mx-auto">
         {/* Section Heading */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white">
-            Achievements & Recognition
+        <div className="text-center mb-20">
+          <div className="inline-block mb-4 px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full">
+            <span className="text-sm font-semibold text-blue-400">Journey Through Time</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight">
+            Achievements Timeline
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Milestones that define my journey in robotics, software development, and innovation.
+          <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            A chronological journey through milestones in robotics, innovation, and technology.
           </p>
         </div>
 
-        {/* Achievements Grid - Responsive */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+        {/* Desktop Timeline View (hidden on mobile) */}
+        <div className="hidden lg:block space-y-16">
           {achievements.map((achievement, index) => (
-            <AchievementCard
+            <TimelineCard
+              key={index}
+              achievement={achievement}
+              index={index}
+              onClick={() => setSelectedAchievement(achievement)}
+            />
+          ))}
+        </div>
+
+        {/* Mobile Stacked View (visible on mobile/tablet) */}
+        <div className="lg:hidden">
+          {achievements.map((achievement, index) => (
+            <MobileCard
               key={index}
               achievement={achievement}
               onClick={() => setSelectedAchievement(achievement)}

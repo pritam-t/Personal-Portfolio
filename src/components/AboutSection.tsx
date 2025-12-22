@@ -6,9 +6,9 @@ const AboutSection = () => {
     <section className="py-20 px-6 max-w-5xl mx-auto">
       {/* Section Heading */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-          My Journey
-        </h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white">
+            My Journey
+          </h2>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           From a passionate CS student to representing India on the global stage in robotics competitions.
         </p>
