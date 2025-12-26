@@ -123,7 +123,7 @@ const Navbar = () => {
                 className="hidden md:flex bg-gradient-to-r from-primary to-accent hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-primary/50"
                 asChild
               >
-                <a href="/resume.pdf" download>
+                <a href="/resume/Pritam_Resume.pdf" download>
                   <Download className="w-4 h-4 mr-2" />
                   Resume
                 </a>
@@ -171,7 +171,7 @@ const Navbar = () => {
                 className="mt-2 bg-gradient-to-r from-primary to-accent shadow-lg"
                 asChild
               >
-                <a href="/resume.pdf" download>
+                <a href="/resume/Pritam_Resume.pdf" download>
                   <Download className="w-4 h-4 mr-2" />
                   Download Resume
                 </a>
