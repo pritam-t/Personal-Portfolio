@@ -25,21 +25,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-24 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      {/* Background grid */}
-      <div className="absolute inset-0 opacity-[0.02] hidden sm:block">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, #fff 1px, transparent 1px),
-              linear-gradient(to bottom, #fff 1px, transparent 1px)
-            `,
-            backgroundSize: "60px 60px",
-          }}
-        />
-      </div>
-
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -59,7 +45,7 @@ const HeroSection = () => {
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-tight">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight">
               Pritam
               <br />
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
@@ -123,7 +109,7 @@ const HeroSection = () => {
               </Button>
 
               <Button variant="ghost" size="lg" asChild className="w-full sm:w-auto">
-                <a href="/resume/Pritam_Thopate_Resume.pdf" download>
+                <a href="public\resume\Pritam_Thopate_Resume.pdf" download>
                   <Download className="w-5 h-5" />
                 </a>
               </Button>
@@ -140,6 +126,7 @@ const HeroSection = () => {
                   key={href}
                   href={href}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="w-11 h-11 rounded-xl border border-gray-700 flex items-center justify-center hover:border-primary transition"
                 >
                   <Icon className="w-5 h-5 text-gray-400 hover:text-primary" />
@@ -169,7 +156,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll */}
+      {/* Scroll indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block">
         <ChevronDown className="w-6 h-6 text-primary" />
       </div>
