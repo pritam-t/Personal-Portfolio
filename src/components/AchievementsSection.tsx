@@ -425,7 +425,7 @@ const AchievementsSection = () => {
       icon: Trophy,
       year: "2022",
       images: ["/images/FC.jpg", "/images/sec/FGC.jpg"],
-      video: "/videos/FC_demo.mp4",
+      video: "/videos/FGC.mp4",
       highlights: [
         "Designed and implemented autonomous control algorithms using Java and sensor fusion techniques for consistent path accuracy and efficient task execution",
         "Integrated multiple sensors including gyroscopes, ultrasonic sensors, and encoders to enhance navigation and environment awareness",
@@ -444,6 +444,7 @@ const AchievementsSection = () => {
       icon: Medal,
       year: "2022",
       images: ["/images/FTC_2021.jpg","/images/sec/FTC_2022.jpg"],
+      video: "/videos/FTC_2022.mp4",
       highlights: [
         "Developed control algorithms and automation logic in Java, integrating multiple sensors such as IMUs, encoders, and distance sensors to ensure accurate movement and consistent alignment",
         "Used OpenCV for real-time object detection to autonomously detect freight zones and adjust trajectory accordingly",
@@ -477,7 +478,7 @@ const AchievementsSection = () => {
       icon: Star,
       year: "2024",
       images: ["/images/Snap_AR.jpg","/images/sec/Snap.jpg"],
-      video: "/videos/snap_ar_demo.mp4",
+      video: "/videos/Snap.mp4",
       highlights: [
         "Designed fully interactive 3D AR experience using Snap Lens Studio for real-time clothing visualization and virtual try-on",
         "Focused on real-time texture rendering, 3D object animation, and gesture recognition scripting using Lens Studio's JavaScript-based environment",
@@ -493,6 +494,7 @@ const AchievementsSection = () => {
       icon: Award,
       year: "2025",
       images: ["/images/Edu_Summit.jpg","/images/sec/Edu.jpg"],
+      video: "/videos/Edu.mp4",
       highlights: [
         "Represented FIRST Tech Challenge Robot and STEMverse projects at Amazon's Careers of the Future Summit 2025",
         "Presented technical and design architecture of robotics solutions focusing on control logic, automation workflows, and software-driven mechanical coordination",
@@ -510,6 +512,7 @@ const AchievementsSection = () => {
       icon: Users,
       year: "2025",
       images: ["/images/FTC_2025.jpg","/images/sec/FTC_2025.jpg"],
+      video: "/videos/FTC_2025.mp4",
       highlights: [
         "Returned to FTC 2025 as Programming Mentor for Team Educo #25222, guiding students through every stage of the competition from software design to real-time testing",
         "Trained team in developing modular Java codebases for robot subsystems and implementing PID control systems for motor precision",
