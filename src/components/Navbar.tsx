@@ -123,11 +123,17 @@ const Navbar = () => {
                 className="hidden md:flex bg-gradient-to-r from-primary to-accent hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-primary/50"
                 asChild
               >
-                <a href="/resume/Pritam_Resume.pdf" download>
+                <a
+                  href="/resume/Pritam_Resume.pdf"
+                  download="Pritam_Thopate_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Download className="w-4 h-4 mr-2" />
                   Resume
                 </a>
               </Button>
+
 
               {/* Mobile Menu Button */}
               <Button
