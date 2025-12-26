@@ -424,7 +424,7 @@ const AchievementsSection = () => {
       theme: "Carbon Capture – Innovating Solutions to Reduce Global Carbon Emissions",
       icon: Trophy,
       year: "2022",
-      images: ["/images/FC.jpg", "/images/FC_team.jpg"],
+      images: ["/images/FC.jpg", "/images/sec/FGC.jpg"],
       video: "/videos/FC_demo.mp4",
       highlights: [
         "Designed and implemented autonomous control algorithms using Java and sensor fusion techniques for consistent path accuracy and efficient task execution",
@@ -443,7 +443,7 @@ const AchievementsSection = () => {
       theme: "Freight Frenzy – Automation and Precision Robotics",
       icon: Medal,
       year: "2022",
-      images: ["/images/FTC_2021.jpg"],
+      images: ["/images/FTC_2021.jpg","/images/sec/FTC_2022.jpg"],
       highlights: [
         "Developed control algorithms and automation logic in Java, integrating multiple sensors such as IMUs, encoders, and distance sensors to ensure accurate movement and consistent alignment",
         "Used OpenCV for real-time object detection to autonomously detect freight zones and adjust trajectory accordingly",
@@ -459,7 +459,7 @@ const AchievementsSection = () => {
       theme: "Industrial Automation and Smart Logistics",
       icon: Zap,
       year: "2024",
-      images: ["/images/KJSIT.jpg", "/images/KJSIT_demo.jpg"],
+      images: ["/images/KJSIT.jpg", "/images/sec/Astra.jpg"],
       highlights: [
         "Led software and system integration aspects, building seamless link between hardware and software",
         "Implemented QR code-based identification system to determine package destinations with high accuracy",
@@ -476,7 +476,7 @@ const AchievementsSection = () => {
       location: "Organized by Snap Inc.",
       icon: Star,
       year: "2024",
-      images: ["/images/Snap_AR.jpg"],
+      images: ["/images/Snap_AR.jpg","/images/sec/Snap.jpg"],
       video: "/videos/snap_ar_demo.mp4",
       highlights: [
         "Designed fully interactive 3D AR experience using Snap Lens Studio for real-time clothing visualization and virtual try-on",
@@ -492,7 +492,7 @@ const AchievementsSection = () => {
       location: "Taj Palace, New Delhi",
       icon: Award,
       year: "2025",
-      images: ["/images/Edu_Summit.jpg"],
+      images: ["/images/Edu_Summit.jpg","/images/sec/Edu.jpg"],
       highlights: [
         "Represented FIRST Tech Challenge Robot and STEMverse projects at Amazon's Careers of the Future Summit 2025",
         "Presented technical and design architecture of robotics solutions focusing on control logic, automation workflows, and software-driven mechanical coordination",
@@ -509,7 +509,7 @@ const AchievementsSection = () => {
       role: "Programming & Technical Mentor",
       icon: Users,
       year: "2025",
-      images: ["/images/FTC_2025.jpg"],
+      images: ["/images/FTC_2025.jpg","/images/sec/FTC_2025.jpg"],
       highlights: [
         "Returned to FTC 2025 as Programming Mentor for Team Educo #25222, guiding students through every stage of the competition from software design to real-time testing",
         "Trained team in developing modular Java codebases for robot subsystems and implementing PID control systems for motor precision",
