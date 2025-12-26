@@ -109,7 +109,7 @@ const HeroSection = () => {
               </Button>
 
               <Button variant="ghost" size="lg" asChild className="w-full sm:w-auto">
-                <a href="/resume/Pritam_Resume.pdf" download>
+                <a href="\resume\Pritam_Resume.pdf" download>
                   <Download className="w-5 h-5" />
                 </a>
               </Button>
