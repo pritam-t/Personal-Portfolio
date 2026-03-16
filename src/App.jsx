@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin, ExternalLink, Award, Code, Cpu, Smartphone, Men
 import { Download } from 'lucide-react';
 import { portfolioData } from "./data/portfolioData";
 import "./styles/global.css";
-import { supabase } from "../lib/supabaseClient.js";
+import { supabase } from "src\lib\supabaseClient.js";
 
 
 // Custom Cursor Component with Crosshair
