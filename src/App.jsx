@@ -1467,13 +1467,12 @@ const Hero = memo(() => {
                   {/* Resume Download */}
                 <div className="border-t-2 border-white/20 pt-4 mt-4">
                   <a
-                    href="public\Pritam_Thopate_Resume.pdf"
-                    download
-                    className="w-full flex items-center justify-center gap-2 px-4 py-3 border-2 border-yellow-400 text-yellow-400 font-black text-xs tracking-wider hover:bg-yellow-400 hover:text-black transition-all duration-300"
-                  >
-                    <Download size={16} strokeWidth={3} />
-                    DOWNLOAD RESUME
-                  </a>
+                      href="/resume.pdf"
+                      download="Pritam_Thopate_Resume.pdf"
+                      className="w-full flex items-center justify-center gap-2 px-4 py-3 border-2 border-yellow-400 text-yellow-400 font-black text-xs tracking-wider hover:bg-yellow-400 hover:text-black transition-all duration-300"
+                    >
+                      DOWNLOAD RESUME
+                    </a>
                 </div>
                 </div>
               </div>
