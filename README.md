@@ -1,16 +1,68 @@
-# React + Vite
+# 🚀_ Personal Portfolio Website _ 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive personal portfolio built with **Next.js**, **Tailwind CSS**, and **shadcn/ui**.  
+This website showcases my skills, projects, and professional journey as a **Software Developer**, **Native App Developer**, and **Google Student Brand Ambassador**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- 📱 **Responsive Design** – Works on desktop, tablet, and mobile
+- 🎨 **Modern UI** – Styled with Tailwind CSS and shadcn/ui components
+- 🌈 **Custom Animations** – Smooth scroll and hover effects
+- 🖼 **Projects Showcase** – Highlight of my top works
+- 💼 **Professional Experience** – Detailed career and internship info
+- 📧 **Contact Section** – Quick ways to reach me via email or socials
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com/)
+- **Icons:** [Lucide Icons](https://lucide.dev/)
+- **Deployment:** [Vercel](https://vercel.com/)
+
+---
+
+## 📂 Project Structure
+
+├── components/ # Reusable UI components<br>
+├── assets/ # Images & static files<br>
+├── pages/ # Page components (Next.js routing)<br>
+├── public/ # Public assets<br>
+├── styles/ # Global styles<br>
+└── README.md<br>
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+   ```bash
+      git clone https://github.com/pritam-t/Personal-Portfolio.git
+      cd portfolio
+   ```
+
+### 2️⃣ Install Dependencies
+   ```bash 
+      npm install
+   ```
+
+### 3️⃣ Run the Development Server
+   ```bash
+      npm run dev
+   ```
+    
+Now the website will be running at http://localhost:3000
+
+## 📬 Contact
+Portfolio: [Your Website URL]
+
+### GitHub: https://github.com/pritam-t
+
+### LinkedIn: https://www.linkedin.com/in/pritam-thopate/
+
+### Email: pritamthopate27@gmail.com
+
+# 💡 This portfolio is open-source! Feel free to fork and use it for your own projects.
