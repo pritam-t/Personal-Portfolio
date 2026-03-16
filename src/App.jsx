@@ -1474,8 +1474,41 @@ const Hero = memo(() => {
                       DOWNLOAD RESUME
                     </a>
                 </div>
+                {/* SOCIAL LINKS */}
+<div className="border-t-2 border-white/20 pt-3">
+  <div className="text-yellow-400 text-xs font-black mb-2 tracking-wider">
+    CONNECT
+  </div>
+
+  <div className="flex gap-2">
+    
+    {/* GitHub */}
+    <a
+      href={portfolioData.social.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex-1 border-2 border-white/20 py-2 flex items-center justify-center gap-2 text-white text-xs font-black hover:border-yellow-400 hover:text-yellow-400 transition-all"
+    >
+      <Github size={14} strokeWidth={3} />
+      GITHUB
+    </a>
+
+    {/* LinkedIn */}
+    <a
+      href={portfolioData.social.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex-1 border-2 border-white/20 py-2 flex items-center justify-center gap-2 text-white text-xs font-black hover:border-yellow-400 hover:text-yellow-400 transition-all"
+    >
+      <Linkedin size={14} strokeWidth={3} />
+      LINKEDIN
+    </a>
+
+  </div>
+</div>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>
