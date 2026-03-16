@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+    * {
+        font-family: 'Space Mono', monospace;
+        cursor: none;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #fbbf24 #000000;
+    }
+
+    *::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #000000;
+        border-left: 2px solid #fbbf24;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background: #fbbf24;
+        border: 2px solid #000000;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background: #ffffff;
+    }
+
+    @keyframes bounce {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+
+    /* Glass Panels */
+    .glass-panel {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Yellow Glow Effects */
+    .glow-yellow {
+        box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+    }
+
+    .glow-yellow-strong {
+        box-shadow: 0 0 30px rgba(251, 191, 36, 0.6);
+    }
+
+    .text-glow-yellow {
+        text-shadow: 0 0 10px rgba(251, 191, 36, 0.7);
+    }
+
+    /* Section Divider */
+    .section-divider {
+        height: 1px;
+        background: linear-gradient(to right,
+                transparent,
+                #fbbf24,
+                transparent);
+    }
+
+    /* Skill Logo Hover */
+    .skill-logo {
+        transition: transform 0.3s ease;
+    }
+
+    .group:hover .skill-logo {
+        transform: scale(1.1);
+    }
+
+    /* Custom Cursor - Futuristic Crosshair Design */
+    * {
+        cursor: none;
+    }
+
+    .custom-cursor {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        pointer-events: none;
+        z-index: 10000;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease;
+    }
+
+    .custom-cursor::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        border: 2px solid #fbbf24;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+    }
+
+    .custom-cursor::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 6px;
+        background: #fbbf24;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(251, 191, 36, 0.8);
+    }
+
+    /* Cursor crosshair lines */
+    .cursor-line-h {
+        position: fixed;
+        width: 40px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+        pointer-events: none;
+        z-index: 10000;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    .cursor-line-v {
+        position: fixed;
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(180deg, transparent, #fbbf24, transparent);
+        pointer-events: none;
+        z-index: 10000;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    .custom-cursor.hovering::before {
+        width: 35px;
+        height: 35px;
+        border-width: 3px;
+    }
+
+    .custom-cursor-dot {
+        display: none;
+    }
+
+    /* Animated Particles */
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0) translateX(0);
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 0.6;
+        }
+
+        90% {
+            opacity: 0.3;
+        }
+
+        100% {
+            transform: translateY(-100vh) translateX(50px);
+            opacity: 0;
+        }
+    }
+
+    /* Cyber Grid */
+    .cyber-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(251, 191, 36, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(251, 191, 36, 0.05) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: gridScroll 20s linear infinite;
+        pointer-events: none;
+    }
+
+    @keyframes gridScroll {
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: 50px 50px;
+        }
+    }
+
+    @keyframes roverMove {
+        0% {
+            transform: translateX(-120px);
+        }
+
+        50% {
+            transform: translateX(calc(100vw - 120px));
+        }
+
+        100% {
+            transform: translateX(-120px);
+        }
+    }
+
+    .rover-move {
+        animation: roverMove 45s linear infinite;
+    }
+
+    /* Scanline */
+    .scanline {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+        animation: scan 4s linear infinite;
+        opacity: 0.2;
+        pointer-events: none;
+    }
+
+    @keyframes scan {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(100vh);
+        }
+    }
+
+    /* Glow Orbs */
+    @keyframes orbFloat {
+
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        33% {
+            transform: translate(100px, -100px) scale(1.2);
+        }
+
+        66% {
+            transform: translate(-100px, 100px) scale(0.8);
+        }
+    }
+
+    /* Animated Grid Background */
+    .animated-grid {
+        width: 100%;
+        height: 100%;
+        background-image:
+            repeating-linear-gradient(0deg, transparent, transparent 50px, #fbbf24 50px, #fbbf24 51px),
+            repeating-linear-gradient(90deg, transparent, transparent 50px, #fbbf24 50px, #fbbf24 51px);
+        animation: gridMove 20s linear infinite;
+    }
+
+    @keyframes gridMove {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(50px, 50px);
+        }
+    }
+
+    /* Particle Float Animation */
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0) translateX(0);
+        }
+
+        25% {
+            transform: translateY(-20px) translateX(10px);
+        }
+
+        50% {
+            transform: translateY(-10px) translateX(-10px);
+        }
+
+        75% {
+            transform: translateY(-30px) translateX(5px);
+        }
+    }
+
+    /* Shimmer Animation for lines */
+    @keyframes shimmer {
+        0% {
+            opacity: 0.1;
+            transform: translateX(-100%);
+        }
+
+        50% {
+            opacity: 0.3;
+        }
+
+        100% {
+            opacity: 0.1;
+            transform: translateX(100%);
+        }
+    }
+
+    /* Slow Spin Animation */
+    @keyframes animate-spin-slow {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-spin-slow {
+        animation: animate-spin-slow 30s linear infinite;
+    }
+
+    /* Reverse Spin Animation */
+    @keyframes animate-spin-reverse {
+        from {
+            transform: rotate(360deg);
+        }
+
+        to {
+            transform: rotate(0deg);
+        }
+    }
+
+    .animate-spin-reverse {
+        animation: animate-spin-reverse 25s linear infinite;
+    }
+
+    /* Data Stream Animation */
+    .data-stream {
+        animation: scrollText 30s linear infinite;
+    }
+
+    @keyframes scrollText {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Project Card 3D Effect */
+    .project-card {
+        transform-style: preserve-3d;
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.05);
+    }
+
+    
