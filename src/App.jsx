@@ -846,7 +846,7 @@ const TerminalMode = ({ isOpen, onClose }) => {
     ],
     skills: () => {
       const skills = portfolioData.skills.flatMap(cat => 
-        cat.items.map(skill => `  ${skill.name}: ${'█'.repeat(Math.floor(skill.level/10))}${'░'.repeat(10-Math.floor(skill.level/10))} ${skill.level}%`)
+        cat.items.map(skill => `  ${skill.name}`)
       );
       return ['Technical Skills:', ...skills];
     },
@@ -883,6 +883,7 @@ const TerminalMode = ({ isOpen, onClose }) => {
     
     if (cmd === 'clear') {
       setHistory([]);
+      return null;
     } else if (commands[cmd]) {
       const output = commands[cmd]();
       if (output) {
